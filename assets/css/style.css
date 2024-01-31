@@ -1,0 +1,12 @@
+.header {
+    background-color: darkblue;
+    color: white;
+    margin: auto;
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    vertical-align:middle;
+    height: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
