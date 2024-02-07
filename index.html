@@ -15,7 +15,7 @@
         <!-- Accent-colored raised button with ripple -->
             <h2>Search For A  City:</h2>
             <form id="city-form">
-              <input  id="cityname" type="text" autofocus="true"  />
+              <input  class="city-name" type="text" autofocus="true"  />
               <button type="submit" class="btn">Search</button>
             </form>
             <hr>
@@ -30,12 +30,43 @@
 
         </div>
         <div class="forecast">5-Day Forecast:</div>
-        <div class="day1"></div>
-        <div class="day2"></div>
-        <div class="day3"></div>
-        <div class="day4"></div>
-        <div class="day5"></div>
+        <div class="day1">
+            <div class="day1-date"></div>
+            <img id="day1-weatherimg" width="40px" height="40px">
+            <div class="day1-city-temp"></div>
+            <div class="day1-city-wind"></div>
+            <div class="day1-city-humidity"></div>
+        </div>
+        <div class="day2">
+            <div class="day2-date"></div>
+            <img id="day2-weatherimg" width="40px" height="40px">
+            <div class="day2-city-temp"></div>
+            <div class="day2-city-wind"></div>
+            <div class="day2-city-humidity"></div>
+        </div>
+        <div class="day3">
+            <div class="day3-date"></div>
+            <img id="day3-weatherimg" width="40px" height="40px">
+            <div class="day3-city-temp"></div>
+            <div class="day3-city-wind"></div>
+            <div class="day3-city-humidity"></div>
+        </div>
+        <div class="day4">
+            <div class="day4-date"></div>
+            <img id="day4-weatherimg" width="40px" height="40px">
+            <div class="day4-city-temp"></div>
+            <div class="day4-city-wind"></div>
+            <div class="day4-city-humidity"></div>
+        </div>
+        <div class="day5">
+            <div class="day5-date"></div>
+            <img id="day5-weatherimg" width="40px" height="40px">
+            <div class="day5-city-temp"></div>
+            <div class="day5-city-wind"></div>
+            <div class="day5-city-humidity"></div>
+        </div>
     </div>
     <script src="./assets/scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 </body>
 </html>
