@@ -4,22 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 day weather forecast</title>
-    <link rel="stylesheet" href="./assets/css/reset.css" > 
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css" >  -->
     <link rel="stylesheet" href="./assets/css/style.css" > 
-    <!-- material design lite -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 <body>
     <header>
         <div class="header">Weather Dashboard</div>
     </header>
-    <!-- Accent-colored raised button with ripple -->
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-    Button
-  </button>
-    
+    <div class="city-search">
+        <!-- Accent-colored raised button with ripple -->
+            <h2>Search For A  City:</h2>
+            <form id="city-form">
+              <input  id="cityname" type="text" autofocus="true"  />
+              <button type="submit" class="btn">Search</button>
+            </form>
+            <hr>
+    </div>
+    <div class="weather">
+        <div class="cityweather">
+            <div class="city-name-date"></div>
+            <img id="weatherimg" width="40px" height="40px">
+            <div class="city-temp"></div>
+            <div class="city-wind"></div>
+            <div class="city-humidity"></div>
+
+        </div>
+        <div class="forecast">5-Day Forecast:</div>
+        <div class="day1"></div>
+        <div class="day2"></div>
+        <div class="day3"></div>
+        <div class="day4"></div>
+        <div class="day5"></div>
+    </div>
     <script src="./assets/scripts/main.js"></script>
 </body>
 </html>

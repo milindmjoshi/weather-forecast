@@ -1,3 +1,7 @@
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .header {
     background-color: darkblue;
     color: white;
@@ -10,3 +14,124 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
 }
+
+.city-search{
+    width: 20%;
+    height: 100vh;
+    display: inline;
+    float: left;
+    /* border: 2px solid red; */
+    /* background-color: blue; */
+} 
+
+#cityname {
+    margin-top: 10px;
+    width: 90%;
+    padding: 10px;
+    display: block;
+    justify-self: left;
+}
+
+.btn {
+    color: white;
+    background-color: blue;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    display: block;
+}
+
+.btn:hover {
+    background-color: white;
+    color: blue;
+    cursor: auto;
+}
+
+.cityweather {
+    width: 80%;
+    display: inline;
+    grid-area: cityweather;
+    height: 200px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+.forecast {
+    width: 100%;
+    display: block;
+    grid-area: forecast;
+    height: 100%;
+    /* border: 2px solid red; */
+    /* margin: 20px;
+    margin-top: 5px; */
+    margin-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.day1 {
+    grid-area: day1;
+    /* border: 2px solid blue; */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 170px;
+    height: 220px;
+    margin-left: 20px;
+    background-color: slategray;
+}
+.day2 {
+    grid-area: day2;
+    /* border: 2px solid blue; */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 170px;
+    height: 220px;
+    background-color: slategray;
+}
+.day3 {
+    grid-area: day3;
+    /* border: 2px solid blue; */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 170px;
+    height: 220px;
+    background-color: slategray;
+}
+.day4 {
+    grid-area: day4;
+    /* border: 2px solid blue; */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 170px;
+    height: 220px;
+    background-color: slategray;
+}
+.day5 {
+    grid-area: day5;
+    /* border: 2px solid blue; */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 170px;
+    height: 220px;
+    background-color: slategray;
+}
+
+.weather {
+    display: grid;
+    grid-template-areas:
+      'cityweather cityweather cityweather cityweather cityweather'
+      'forecast forecast forecast forecast forecast'
+      'day1 day2 day3 day4 day5';
+    row-gap: 10px;
+    /* border: 2px solid yellow; */
+
+}
+
+
+
+
+ 
