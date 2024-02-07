@@ -1,7 +1,7 @@
 console.log("hello, main");
 var searchCity = document.querySelector(".city-name");
 var searchButton = document.querySelector(".btn");
-var cityNameDate = document. querySelector(".city-name-date");
+var cityNameDate = document. querySelector("#city-name-display");
 var cityTemp = document. querySelector(".city-temp");
 var cityWind = document. querySelector(".city-wind");
 var cityHumidity = document. querySelector(".city-humidity");
@@ -84,42 +84,42 @@ function fetchCityWeather(city){
 }
 
 function setCityData(data){
-    var date = data.list[0].dt;
-    console.log("date is: " + date);
-    var myDate = new Date(date);
-    console.log("JS date: " + myDate.toLocaleDateString());
-    var jsDate = dayjs(date);
-    console.log(jsDate.format());
 
     // set main forecast
-    cityNameDate.textContent = data.city.name + " " + data.list[0].dt_txt.split(" ")[0];
+    console.log(cityNameDate);
+    var dt = dayjs(data.list[0].dt_txt).format("MM/DD/YYYY");
+    cityNameDate.textContent = data.city.name + " " + dt;
     cityTemp.textContent = "Temp:" + data.list[0].main.temp + " degrees F";
     cityWind.textContent = "Wind: " + data.list[0].wind.speed + " mph";
     cityHumidity.textContent = "Humidity: " + data.list[0].main.humidity + "%";
 
     // set 5 day forecast
-    cityNameDate.textContent = data.city.name;
-    day1Date.textContent = data.list[7].dt_txt.split(" ")[0];
+    var dt1 = dayjs(data.list[7].dt_txt).format("MM/DD/YYYY");
+    day1Date.textContent = dt1;
     day1CityTemp.textContent = "Temp:" + data.list[7].main.temp + " degrees F";
     day1CityWind.textContent = "Wind: " + data.list[7].wind.speed + " mph";
     day1CityHumidity.textContent = "Humidity: " + data.list[7].main.humidity + "%";
 
-    day2Date.textContent = data.list[15].dt_txt.split(" ")[0];
+    var dt2 = dayjs(data.list[15].dt_txt).format("MM/DD/YYYY");
+    day2Date.textContent = dt2;
     day2CityTemp.textContent = "Temp:" + data.list[15].main.temp + " degrees F";
     day2CityWind.textContent = "Wind: " + data.list[15].wind.speed + " mph";
     day2CityHumidity.textContent = "Humidity: " + data.list[15].main.humidity + "%";
 
-    day3Date.textContent = data.list[23].dt_txt.split(" ")[0];
+    var dt3 = dayjs(data.list[23].dt_txt).format("MM/DD/YYYY");
+    day3Date.textContent = dt3;
     day3CityTemp.textContent = "Temp:" + data.list[23].main.temp + " degrees F";
     day3CityWind.textContent = "Wind: " + data.list[23].wind.speed + " mph";
     day3CityHumidity.textContent = "Humidity: " + data.list[23].main.humidity + "%";
 
-    day4Date.textContent = data.list[31].dt_txt.split(" ")[0];
+    var dt4 = dayjs(data.list[31].dt_txt).format("MM/DD/YYYY");
+    day4Date.textContent = dt4;
     day4CityTemp.textContent = "Temp:" + data.list[31].main.temp + " degrees F";
     day4CityWind.textContent = "Wind: " + data.list[31].wind.speed + " mph";
     day4CityHumidity.textContent = "Humidity: " + data.list[31].main.humidity + "%";
 
-    day5Date.textContent = data.list[39].dt_txt.split(" ")[0];
+    var dt5 = dayjs(data.list[39].dt_txt).format("MM/DD/YYYY");
+    day5Date.textContent = dt5;
     day5CityTemp.textContent = "Temp:" + data.list[39].main.temp + " degrees F";
     day5CityWind.textContent = "Wind: " + data.list[39].wind.speed + " mph";
     day5CityHumidity.textContent = "Humidity: " + data.list[39].main.humidity + "%";
