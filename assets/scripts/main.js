@@ -92,37 +92,37 @@ function setCityData(data){
     console.log(jsDate.format());
 
     // set main forecast
-    cityNameDate.textContent = data.city.name;
-    cityTemp.textContent = data.list[0].main.temp + " degrees F";
-    cityWind.textContent = data.list[0].wind.speed + " mph";
-    cityHumidity.textContent = data.list[0].main.humidity + "%";
+    cityNameDate.textContent = data.city.name + " " + data.list[0].dt_txt.split(" ")[0];
+    cityTemp.textContent = "Temp:" + data.list[0].main.temp + " degrees F";
+    cityWind.textContent = "Wind: " + data.list[0].wind.speed + " mph";
+    cityHumidity.textContent = "Humidity: " + data.list[0].main.humidity + "%";
 
     // set 5 day forecast
     cityNameDate.textContent = data.city.name;
     day1Date.textContent = data.list[7].dt_txt.split(" ")[0];
-    day1CityTemp.textContent = data.list[7].main.temp + " degrees F";
-    day1CityWind.textContent = data.list[7].wind.speed + " mph";
-    day1CityHumidity.textContent = data.list[7].main.humidity + "%";
+    day1CityTemp.textContent = "Temp:" + data.list[7].main.temp + " degrees F";
+    day1CityWind.textContent = "Wind: " + data.list[7].wind.speed + " mph";
+    day1CityHumidity.textContent = "Humidity: " + data.list[7].main.humidity + "%";
 
     day2Date.textContent = data.list[15].dt_txt.split(" ")[0];
-    day2CityTemp.textContent = data.list[15].main.temp + " degrees F";
-    day2CityWind.textContent = data.list[15].wind.speed + " mph";
-    day2CityHumidity.textContent = data.list[15].main.humidity + "%";
+    day2CityTemp.textContent = "Temp:" + data.list[15].main.temp + " degrees F";
+    day2CityWind.textContent = "Wind: " + data.list[15].wind.speed + " mph";
+    day2CityHumidity.textContent = "Humidity: " + data.list[15].main.humidity + "%";
 
     day3Date.textContent = data.list[23].dt_txt.split(" ")[0];
-    day3CityTemp.textContent = data.list[23].main.temp + " degrees F";
-    day3CityWind.textContent = data.list[23].wind.speed + " mph";
-    day3CityHumidity.textContent = data.list[23].main.humidity + "%";
+    day3CityTemp.textContent = "Temp:" + data.list[23].main.temp + " degrees F";
+    day3CityWind.textContent = "Wind: " + data.list[23].wind.speed + " mph";
+    day3CityHumidity.textContent = "Humidity: " + data.list[23].main.humidity + "%";
 
     day4Date.textContent = data.list[31].dt_txt.split(" ")[0];
-    day4CityTemp.textContent = data.list[31].main.temp + " degrees F";
-    day4CityWind.textContent = data.list[31].wind.speed + " mph";
-    day4CityHumidity.textContent = data.list[31].main.humidity + "%";
+    day4CityTemp.textContent = "Temp:" + data.list[31].main.temp + " degrees F";
+    day4CityWind.textContent = "Wind: " + data.list[31].wind.speed + " mph";
+    day4CityHumidity.textContent = "Humidity: " + data.list[31].main.humidity + "%";
 
     day5Date.textContent = data.list[39].dt_txt.split(" ")[0];
-    day5CityTemp.textContent = data.list[39].main.temp + " degrees F";
-    day5CityWind.textContent = data.list[39].wind.speed + " mph";
-    day5CityHumidity.textContent = data.list[39].main.humidity + "%";
+    day5CityTemp.textContent = "Temp:" + data.list[39].main.temp + " degrees F";
+    day5CityWind.textContent = "Wind: " + data.list[39].wind.speed + " mph";
+    day5CityHumidity.textContent = "Humidity: " + data.list[39].main.humidity + "%";
 }
 
 // fetch city weather icon
