@@ -63,10 +63,10 @@ h2 {
 }
 
 .city-name-date{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width:fit-content;
     /*width: 80%; */
-    height: 40px;  /* Somehow removing this messes things up */
+    height: 20px;  /* Somehow removing this messes things up */
     margin-left: 5px;
 }
 
@@ -76,6 +76,9 @@ h2 {
     padding-bottom: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
+    margin-top: 0;
+    padding-top: 8px;
+    margin-bottom: 0;
 }
 
 #weatherimg{
@@ -92,12 +95,13 @@ h2 {
     height: 150px;
     border: 1px solid black;
     margin: 20px;
+    margin-bottom: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
 }
 
 .city-temp{
-    margin: 10px;
+    margin: 8px;
     /* border: 1px solid aqua; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
@@ -132,14 +136,15 @@ h2 {
 
 .day1 {
     grid-area: day1;
-    /* border: 2px solid blue; */
+    border: 2px solid blue;
     margin-top: 10px;
     margin-bottom: 20px;
     width: 170px;
-    height: 220px;
+    height: 190px;
     margin-left: 20px;
     background-color: #212F3C;
     color: white;
+    padding: 10px;
 }
 .day2 {
     grid-area: day2;
@@ -147,9 +152,10 @@ h2 {
     margin-top: 10px;
     margin-bottom: 20px;
     width: 170px;
-    height: 220px;
+    height: 190px;
     background-color: #212F3C;
     color: white;
+    padding: 10px;
 }
 .day3 {
     grid-area: day3;
@@ -157,9 +163,10 @@ h2 {
     margin-top: 10px;
     margin-bottom: 20px;
     width: 170px;
-    height: 220px;
+    height: 190px;
     background-color: #212F3C;
     color: white;
+    padding: 10px;
 }
 .day4 {
     grid-area: day4;
@@ -167,9 +174,10 @@ h2 {
     margin-top: 10px;
     margin-bottom: 20px;
     width: 170px;
-    height: 220px;
+    height: 190px;
     background-color: #212F3C;
     color: white;
+    padding: 10px;
 }
 .day5 {
     grid-area: day5;
@@ -177,9 +185,10 @@ h2 {
     margin-top: 10px;
     margin-bottom: 20px;
     width: 170px;
-    height: 220px;
+    height: 190px;
     background-color: #212F3C;
     color: white;
+    padding: 10px;
 }
 
 .weather {
@@ -189,6 +198,7 @@ h2 {
       'forecast forecast forecast forecast forecast'
       'day1 day2 day3 day4 day5';
     row-gap: 10px;
+    column-gap: 5px;
     /* border: 2px solid yellow; */
 
 }
