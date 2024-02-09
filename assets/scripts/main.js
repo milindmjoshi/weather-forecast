@@ -7,6 +7,7 @@ var cityWind = document. querySelector(".city-wind");
 var cityHumidity = document. querySelector(".city-humidity");
 var weatherimg = document.querySelector("#weatherimg");
 var savedCitiesEl = document.querySelector(".saved-cities");
+var message = document.querySelector(".message");
 
 //get day1 elements 
 var day1Date = document. querySelector(".day1-date");
@@ -56,6 +57,7 @@ cityArray.forEach((city)=> {
         console.log(city)
 });
 
+
 // Add handler to fetch city data on click
 searchButton.addEventListener('click',(e)=> {
     e.preventDefault();
@@ -76,7 +78,7 @@ function getCityWeather(event){
 function createCityButton(city){
     var newbutton =document.createElement("button");
     newbutton.textContent = city;
-    newbutton.classList.add("btn");
+    newbutton.classList.add("citybtn");
     newbutton.addEventListener('click', getCityWeather);
     savedCitiesEl.appendChild(newbutton);
 }
@@ -109,17 +111,40 @@ function fetchCityWeather(city){
             return response.json();
         else    
             console.log("City not found");
+            showMessage("City " + city + " Not Found");
+            setTimeout(hideMessage(),2000);
     })
     .then(function response(data){
         console.log(data);
-        setCityData(data);
-        if (savedCities.indexOf(city) == -1){
-            savedCities = savedCities.concat(city + ":");
-            console.log("saved cities: " + savedCities);
-            localStorage.setItem("Cities",savedCities);
-            createCityButton(city);
+        if (data != undefined){
+            setCityData(data);
+            hideMessage();
+            if (savedCities.indexOf(city) == -1){
+                savedCities = savedCities.concat(city + ":");
+                console.log("saved cities: " + savedCities);
+                localStorage.setItem("Cities",savedCities);
+                createCityButton(city);
+            }
         }
     });
+}
+
+// show message at top if search city not found
+function showMessage(text){
+    console.log(message);
+    message.innerHTML = text;
+    message.style.visibility = 'visible';
+}
+
+// hide city not found message
+function hideMessage(){
+    console.log("hide message");
+    console.log(message);
+    message.style.visiblility = 'hidden';
+    console.log(message.innerHTML);
+    message.innerHTML='hide me';
+    console.log(message.innerHTML);
+    console.log(message);
 }
 
 function setCityData(data){
@@ -169,23 +194,6 @@ function setCityData(data){
     day5CityHumidity.textContent = "Humidity: " + data.list[39].main.humidity + "%";
     fetchCityWeatherIcon(data,39);
 }
-
-// fetch city weather icon
-// function fetchCityWeatherIcon(data){
-// var cityIconCode = data.list[0].weather[0].icon;
-// console.log("icon code: " + cityIconCode);
-// fetch current
-// fetch(icon + cityIconCode + iconSuffix)
-//     .then(function(response){
-//         console.log(response.status);
-//         return response.blob();
-//     })
-//     .then(function response(data){
-//         var imageURL = URL.createObjectURL(data);
-//         console.log(imageURL);
-//         weatherimg.setAttribute("src",imageURL);
-//     });
-//}
 
 function fetchCityWeatherIcon(data,index){
     var cityIconCode = data.list[index].weather[0].icon;

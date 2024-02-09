@@ -2,6 +2,14 @@ h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.message {
+    visibility: hidden;
+    color: red;
+    margin: auto;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 #weatherimg{
     float: left;
     /* display: inline; */
@@ -35,7 +43,7 @@ h2 {
 
 .city-name {
     margin-top: 10px;
-    /* width: 90%; */
+    width: 95%;
     margin-right: 10px;
     display: block;
     padding: 5px;
@@ -59,6 +67,24 @@ h2 {
 .btn:hover {
     background-color: white;
     color: blue;
+    cursor: auto;
+}
+.citybtn {
+    color: black;
+    background-color: lightgray;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    display: block;
+}
+
+.citybtn:hover {
+    background-color: black;
+    color: lightgray;
     cursor: auto;
 }
 
@@ -136,7 +162,7 @@ h2 {
 
 .day1 {
     grid-area: day1;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     margin-top: 10px;
     margin-bottom: 20px;
     width: 170px;
@@ -146,6 +172,7 @@ h2 {
     color: white;
     padding: 10px;
 }
+
 .day2 {
     grid-area: day2;
     /* border: 2px solid blue; */
@@ -191,18 +218,49 @@ h2 {
     padding: 10px;
 }
 
+.day1-city-wind ,.day2-city-wind , .day3-city-wind, .day4-city-wind, .day5-city-wind{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .weather {
     display: grid;
+    width: 70%;
     grid-template-areas:
       'cityweather cityweather cityweather cityweather cityweather'
       'forecast forecast forecast forecast forecast'
       'day1 day2 day3 day4 day5';
     row-gap: 10px;
-    column-gap: 5px;
+    column-gap: 20px;
     /* border: 2px solid yellow; */
 
 }
 
+
+/* Handle smaller screens by stacking forecast and making widht smaller */
+@media (max-width: 900px) {
+
+    .weather {
+        display: grid;
+        grid-template-areas:
+          'cityweather cityweather '
+          'forecast forecast '
+          'day1 day2 '
+          'day3 day4 ' 
+          'day5 day5';
+        row-gap: 10px;
+        column-gap: 5px;
+        /* border: 2px solid yellow; */
+    
+    }
+
+    .day1,.day2,.day3,.day4,.day5{
+        width: 120px;
+    }
+    
+   
+    
+}
 
 
 
