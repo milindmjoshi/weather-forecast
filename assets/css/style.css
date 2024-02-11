@@ -3,7 +3,7 @@ h2 {
 }
 
 .message {
-    visibility: hidden;
+    /* visibility: hidden; */
     color: red;
     margin: auto;
     font-size: 15px;

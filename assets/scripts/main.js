@@ -107,12 +107,14 @@ function fetchCityWeather(city){
     fetch(bycity + city + appId)
     .then(function(response){
         console.log(response.status);
-        if (response.status === 200)
+        if (response.status === 200){
+            hideMessage();
             return response.json();
-        else    
+        }
+        else{    
             console.log("City not found");
             showMessage("City " + city + " Not Found");
-            setTimeout(hideMessage(),2000);
+        }
     })
     .then(function response(data){
         console.log(data);
@@ -131,20 +133,16 @@ function fetchCityWeather(city){
 
 // show message at top if search city not found
 function showMessage(text){
-    console.log(message);
+    console.log("show message: " + text);
     message.innerHTML = text;
-    message.style.visibility = 'visible';
+    //message.style.visibility = 'visible';
 }
 
 // hide city not found message
 function hideMessage(){
     console.log("hide message");
     console.log(message);
-    message.style.visiblility = 'hidden';
-    console.log(message.innerHTML);
-    message.innerHTML='hide me';
-    console.log(message.innerHTML);
-    console.log(message);
+    message.innerHTML='';
 }
 
 function setCityData(data){
