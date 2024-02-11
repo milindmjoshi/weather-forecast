@@ -1,7 +1,7 @@
 # weather-forecast
 
 ## Description
-Application which shows the weather forecast for the next day, and a five day forecast for the next five days. User can search for a city, and if the city is found then the forecast is shown for that city. In addition, if the city is found a button is shown under the search with the city name that was found for a quick search on the weather for that city. If the city was not found, a city not found message is shown at the top of the screen. 
+Application which shows the weather forecast for a city for the next day, and a five day forecast for the next five days. User can search for a city, and if the city is found then the forecast is shown for that city. In addition, if the city is found a button is shown under the search with the city name that was found for a quick search on the weather for that city. If the city was not found, a city not found message is shown at the top of the screen. 
 
 ![Screenshot](./assets/images/06-demo.png)
 
