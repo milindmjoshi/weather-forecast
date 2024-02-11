@@ -13,8 +13,9 @@ https://api.openweathermap.org/
 
 ## Usage
 1. Enter city name for forecast in search box and hit enter
-2. View City forecast for next dany and five day forecast
+2. View City forecast for next day and five day forecast
 3. If city is not found a "City not found" message is displayed at the top
+4. If city is found, it is saved and a button is displayed for quick search on that city
 
 ## Website Link
 https://milindmjoshi.github.io/weather-forecast/
