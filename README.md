@@ -9,7 +9,7 @@ Application which shows the weather forecast for the next day, and a five day fo
 N/A
 
 ## Credits
-https://openweathermap.org/api/hourly-forecast
+https://api.openweathermap.org/
 
 ## Usage
 1. Enter city name for forecast in search box and hit enter
