@@ -1,4 +1,18 @@
-console.log("hello, main");
+ 
+//api by city. Note open weather has a city api then doesn't require lat and long
+var bycity = "https://api.openweathermap.org/data/2.5/forecast?q="
+
+// Append the appId and units to the city api. It will be appended after the city is
+// entered by the user. 
+var appId = "&appid=c1e8ac23970e9332cf4800d78f376d1a&units=imperial";
+
+// Icon api. The city api above returns an icon code. The below api is used to fetch the
+// icon image blob for the city icon code
+var icon = "https://openweathermap.org/img/wn/"
+var iconSuffix = "@2x.png";
+
+
+// Get DOM variables
 var searchCity = document.querySelector(".city-name");
 var searchButton = document.querySelector(".btn");
 var cityNameDate = document. querySelector("#city-name-display");
@@ -45,20 +59,21 @@ var day5CityWind = document. querySelector(".day5-city-wind");
 var day5CityHumidity = document. querySelector(".day5-city-humidity");
 var day5Weatherimg = document.querySelector("#day5-weatherimg");
 
-// Load data from local storage if exists
+// Load data from local storage  of saved cities if it exists
 var savedCities = localStorage.getItem("Cities");
 if (savedCities == null){ savedCities = "";}
 console.log("On load, cities saved is: " + savedCities);
 var cityArray = savedCities.split(":");
 cityArray.forEach((city)=> {
     if (city.trim() != ""){
+        // For each city in saved cities, create a cities button for quick search
         createCityButton(city);
     }
         console.log(city)
 });
 
 
-// Add handler to fetch city data on click
+// Add handler to fetch city data on click of city search button
 searchButton.addEventListener('click',(e)=> {
     e.preventDefault();
     var city = searchCity.value;
@@ -69,12 +84,14 @@ searchButton.addEventListener('click',(e)=> {
     
 });
 
+// Used if a city button is clicked . Get the target of the event text for the city name
 function getCityWeather(event){
     var button = event.target;
     var city = button.textContent;
     fetchCityWeather(city);
 }
 
+// Dynamically create city buttons for successful city searches 
 function createCityButton(city){
     var newbutton =document.createElement("button");
     newbutton.textContent = city;
@@ -84,34 +101,21 @@ function createCityButton(city){
 }
 
 
-//var api = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`"
 
-var tampa = "https://api.openweathermap.org/data/2.5/forecast?lat=27.964157&lon=-82.452606&appid=c1e8ac23970e9332cf4800d78f376d1a";
 
-//by city
-var bycity = "https://api.openweathermap.org/data/2.5/forecast?q="
-
-//TODO: add to secret
-var appId = "&appid=c1e8ac23970e9332cf4800d78f376d1a&units=imperial";
-
-// var icon = "https://openweathermap.org/img/wn/10d@2x.png";
-var icon = "https://openweathermap.org/img/wn/"
-var iconSuffix = "@2x.png";
-
-// weather api returns 40 entries 7 per day in 3 hour increments so
-// list[0] = next day , list[7] is day 1, list[14] is day 2, list[21] is day3 , list[28] is day4 and list[35]
-// is day 5
-// fetch weather
+// fetch weather for the given city
 function fetchCityWeather(city){
     console.log("Getting weather for: " + city);
     fetch(bycity + city + appId)
     .then(function(response){
         console.log(response.status);
+        // if city is found then hide the message area for city not found
         if (response.status === 200){
             hideMessage();
             return response.json();
         }
         else{    
+            // if city is not found then show the city not founc message
             console.log("City not found");
             showMessage("City " + city + " Not Found");
         }
@@ -120,7 +124,7 @@ function fetchCityWeather(city){
         console.log(data);
         if (data != undefined){
             setCityData(data);
-            hideMessage();
+            // If city was not already saved then add it to the saved cities storage
             if (savedCities.indexOf(city) == -1){
                 savedCities = savedCities.concat(city + ":");
                 console.log("saved cities: " + savedCities);
@@ -145,6 +149,10 @@ function hideMessage(){
     message.innerHTML='';
 }
 
+// weather api returns 40 entries 7 per day in 3 hour increments so
+// list[0] = next day , list[7] is day 1, list[15] is day 2, list[23] is day3 , list[31] is day4 and list[39]
+// are the indexes for the next day and the five day forecast
+// Set the city data from the response
 function setCityData(data){
 
     // set main forecast
@@ -193,6 +201,7 @@ function setCityData(data){
     fetchCityWeatherIcon(data,39);
 }
 
+// Use the icon api from the icon code returned from the city api to fetch the city weather icon
 function fetchCityWeatherIcon(data,index){
     var cityIconCode = data.list[index].weather[0].icon;
     console.log("icon code: " + cityIconCode);

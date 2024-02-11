@@ -17,7 +17,7 @@ https://openweathermap.org/api/hourly-forecast
 3. If city is not found a "City not found" message is displayed at the top
 
 ## Website Link
-https://milindmjoshi.github.io/week2challenge/
+https://milindmjoshi.github.io/weather-forecast/
 
 ## License
 [MIT License](https://opensource.org/license/mit/)

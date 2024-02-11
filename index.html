@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 day weather forecast</title>
-    <!-- <link rel="stylesheet" href="./assets/css/reset.css" >  -->
     <link rel="stylesheet" href="./assets/css/style.css" > 
 </head>
 <body>
+     <!-- Dashboard header -->
     <header>
         <div class="header">Weather Dashboard</div>
     </header>
+     <!-- Div for message to show city not found if invalid city entered -->
     <div class="message"></div>
     <div class="city-search">
-        <!-- Accent-colored raised button with ripple -->
+        <!-- Search City Button -->
             <h2>Search For A  City:</h2>
             <form id="city-form">
               <input  class="city-name" type="text" autofocus="true"  />
@@ -24,6 +25,7 @@
                 
             </div>
     </div>
+     <!-- Section contains city weather and 5 day forecast in a grid layout -->
     <div class="weather">
         <div class="cityweather">
             <div class="city-name-date">
